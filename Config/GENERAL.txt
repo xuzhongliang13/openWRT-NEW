@@ -3,11 +3,24 @@ CONFIG_PACKAGE_luci-app-homeproxy=y
 #增加插件
 CONFIG_PACKAGE_luci-app-autoreboot=y
 CONFIG_PACKAGE_luci-app-gecoosac=n
-CONFIG_PACKAGE_luci-app-mini-diskmanager=y
-CONFIG_PACKAGE_luci-app-partexp=y
+CONFIG_PACKAGE_luci-app-mini-diskmanager=n
+CONFIG_PACKAGE_luci-app-partexp=n
 CONFIG_PACKAGE_luci-app-samba4=n
 CONFIG_PACKAGE_luci-app-upnp=y
-CONFIG_PACKAGE_luci-app-wolplus=y
+CONFIG_PACKAGE_luci-app-wolplus=n
+#新增WireGuard官方前端+协议
+CONFIG_PACKAGE_luci-app-wireguard=y
+CONFIG_PACKAGE_luci-proto-wireguard=y
+#WireGuard一键部署客户端+服务端插件
+CONFIG_PACKAGE_wg-installer-client=y
+CONFIG_PACKAGE_wg-installer-server=y
+#WireGuard辅助增强插件
+CONFIG_PACKAGE_luci-app-wgmonitor=y
+CONFIG_PACKAGE_qrencode=y
+#WireGuard RPC通信、分布式组网依赖
+CONFIG_PACKAGE_rpcd=y
+CONFIG_PACKAGE_rpcd-mod-wireguard=y
+CONFIG_PACKAGE_unetd=y
 #删除插件
 CONFIG_PACKAGE_luci-app-attendedsysupgrade=n
 CONFIG_PACKAGE_luci-app-wol=n
@@ -50,6 +63,7 @@ CONFIG_PACKAGE_kmod-nvme=n
 CONFIG_PACKAGE_kmod-ovpn-backports=y
 CONFIG_PACKAGE_kmod-sound-core=n
 CONFIG_PACKAGE_kmod-tun=y
+#USB系列硬件本机无接口全部保持n
 CONFIG_PACKAGE_kmod-usb3=n
 CONFIG_PACKAGE_kmod-usb-audio=n
 CONFIG_PACKAGE_kmod-usb-core=n
@@ -77,7 +91,7 @@ CONFIG_PACKAGE_kmod-usb-storage-extras=n
 CONFIG_PACKAGE_kmod-usb-storage-uas=n
 CONFIG_PACKAGE_kmod-usb-uhci=n
 CONFIG_PACKAGE_kmod-usb-xhci=n
-CONFIG_PACKAGE_kmod-veth=y
+CONFIG_PACKAGE_kmod-veth=n
 CONFIG_PACKAGE_kmod-wireguard=y
 #组件调整
 CONFIG_PACKAGE_autocore=y
@@ -96,6 +110,11 @@ CONFIG_PACKAGE_gdisk=y
 CONFIG_PACKAGE_htop=y
 CONFIG_PACKAGE_iperf3=y
 CONFIG_PACKAGE_ip-full=y
+#防火墙、路由规则必备依赖
+CONFIG_PACKAGE_ipset=y
+CONFIG_PACKAGE_iptables-nft=y
+#完善IPv6组网配套
+CONFIG_PACKAGE_odhcpd-ipv6only=y
 CONFIG_PACKAGE_libimobiledevice=n
 CONFIG_PACKAGE_libnvme=n
 CONFIG_PACKAGE_lsblk=y
@@ -120,3 +139,6 @@ CONFIG_PACKAGE_usb-modeswitch=n
 CONFIG_PACKAGE_usbmuxd=n
 CONFIG_PACKAGE_usbutils=n
 CONFIG_PACKAGE_xz-utils=y
+#WireGuard核心主程序与命令行工具
+CONFIG_PACKAGE_wireguard=y
+CONFIG_PACKAGE_wireguard-tools=y
