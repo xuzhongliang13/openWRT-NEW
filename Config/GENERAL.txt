@@ -113,6 +113,7 @@ CONFIG_PACKAGE_ip-full=y
 #防火墙、路由规则必备依赖
 CONFIG_PACKAGE_ipset=y
 CONFIG_PACKAGE_iptables-nft=y
+CONFIG_PACKAGE_ip6tables-nft=y
 #完善IPv6组网配套
 CONFIG_PACKAGE_odhcpd-ipv6only=y
 CONFIG_PACKAGE_libimobiledevice=n
@@ -130,6 +131,7 @@ CONFIG_PACKAGE_nvme-cli=n
 CONFIG_PACKAGE_openssh-keygen=y
 CONFIG_PACKAGE_openssh-sftp-server=y
 CONFIG_PACKAGE_openssl-util=y
+CONFIG_PACKAGE_libopenssl=y
 CONFIG_PACKAGE_proto-bonding=y
 CONFIG_PACKAGE_sfdisk=y
 CONFIG_PACKAGE_sgdisk=y
@@ -142,3 +144,12 @@ CONFIG_PACKAGE_xz-utils=y
 #WireGuard核心主程序与命令行工具
 CONFIG_PACKAGE_wireguard=y
 CONFIG_PACKAGE_wireguard-tools=y
+
+# SmartDNS 全套完整配置（含独立监控面板smartdns-ui）
+CONFIG_PACKAGE_smartdns=y
+CONFIG_PACKAGE_smartdns-ui=y
+CONFIG_PACKAGE_luci-app-smartdns=y
+CONFIG_PACKAGE_luci-i18n-smartdns-zh-cn=y
+# 替换默认精简dnsmasq，支持完整转发/hosts/自定义规则
+CONFIG_PACKAGE_dnsmasq-full=y
+CONFIG_PACKAGE_dnsmasq=n
